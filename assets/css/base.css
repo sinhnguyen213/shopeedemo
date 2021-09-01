@@ -1,0 +1,175 @@
+/* Khai báo biến */
+:root{
+    --primary-color:#ee4b2b;
+    --primary-color-rgba:rgb(238, 75, 43, 0.08);
+    --white-color: #fff;
+    --black-color:#000;
+    --text-color: #333;
+    --border-color:#dbdbdb;
+    --header-height:120px;
+    --navbar-height: 34px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 46px;
+
+}
+
+*{
+    box-sizing: inherit;
+}
+
+html{
+    /* HACK, ~10px (100% ~ 16px) */
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/* Test */
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3333%;
+}
+
+.grid__column-2-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+@keyframes growthNotify{
+    from{
+        transform: scale(0);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
+
+
+/* Button style */
+.btn{
+    height: 34px;
+    min-width: 142px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    padding: 0 8px;
+    cursor: pointer;
+    /* display:flex để sử dụng 2 thuộc tính ở dưới */
+    display: flex;
+
+    /* căn giữa theo chiều dọc */
+    align-items: center;
+    /* căn giữa theo chiều ngang */
+    justify-content: center;
+}
+
+
+.btn:hover{
+    opacity: 0.8;
+}
+
+.btn--size-s{
+    height: 32px;
+    font-size: 12px;
+}
+
+.btn.btn--primary{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn--disable{
+    cursor:default;
+    opacity: 0.8;
+}
+
+.top-separate{
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Pagination */
+.pagination{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items:center;
+    padding-left: 0;
+}
+
+.pagination-item{
+    margin: 0 2px;
+    border-radius: 2px;
+}
+
+.home-product__pagination{
+    margin: 48px 0 32px 0;
+}
+
+.pagination-item--active .pagination-item__link{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.pagination-item--active .pagination-item__link:hover{
+    opacity: 0.9;
+}
+
+.pagination-item__link{
+    --height: 30px;
+    font-size: 1.6rem;
+    color: #939393;
+    height: var(--height);
+    min-width: 40px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    line-height: var(--height);
+    cursor: pointer;
+}
+
+.pagination-item__icon{
+
+}
